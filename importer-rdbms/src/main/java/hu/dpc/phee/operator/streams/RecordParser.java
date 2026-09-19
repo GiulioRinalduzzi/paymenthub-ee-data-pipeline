@@ -337,10 +337,10 @@ public class RecordParser {
                         // It's a JSON object
                         processJsonObject(jsonNode,transformer,object,fieldName,variableName,variableValue);
                     } else {
-                        System.err.println("Invalid JSON input.");
+                        logger.warn("not a JSON object or array, skipping transformer for field {}: {}", fieldName, variableValue);
                     }
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    logger.error("failed to read variable {} as JSON while setting field {}", variableName, fieldName, e);
                 }
                 return;
             }
