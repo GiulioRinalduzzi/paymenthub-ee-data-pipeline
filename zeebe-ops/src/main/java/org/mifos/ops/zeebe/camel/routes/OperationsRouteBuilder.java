@@ -64,9 +64,6 @@ public class OperationsRouteBuilder extends ErrorHandlerRouteBuilder {
     ZeebeOpsApplication zeebeOpsApplication;
 
 
-    @Value("${elasticsearch.security.enabled}")
-    private Boolean securityEnabled;
-
 
 
     @Value("#{'${tenants}'.split(',')}")
